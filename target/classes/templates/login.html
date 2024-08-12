@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form action="auth" method="get">
+    <label for="username" id="usernameLabel">Username:</label>
+    <input type="text" name="username" id="username"/>
+    <br/><br/>
+
+    <label for="password" id="passwordLabel">Password:</label>
+    <input type="password" name="password" id="password"/>
+    <br/><br/>
+
+    <button type="submit">Login</button>
+    <button type="reset">Reset</button>
+</form>
+<p th:text="${errorMessage}"></p>
+</body>
+</html>

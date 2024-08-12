@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p th:text="|Hello, ${name}!|"/>
+<p> Which Exploit do you want to try today?</p>
+
+<form action="xss" method="get">
+    <fieldset name="xss_demo">
+        <legend>Cross Site Scripting (XSS)</legend>
+        <label for="payload">Enter your Exploit Here:</label>
+        <input type="text" id="payload" name="payload"><br><br>
+        <input type="submit" value="Submit">
+        <p>Try this: &lt;b&gt; HAXXER &lt;/b&gt;</p>
+    </fieldset>
+</form>
+<form action="sqli" method="get">
+    <fieldset name="sqli_demo">
+        <legend>SQL Injection</legend>
+        <label for="sqli">Enter your Exploit Here:</label>
+        <input type="text" id="sqli" name="sqli"><br><br>
+        <input type="submit" value="Submit">
+        <p>Try this: USER_15' OR 1=1 OR password = 'root</p>
+    </fieldset>
+</form>
+<form th:action="@{/fileupload}" method="post" enctype="multipart/form-data">
+    <fieldset name="fileupload">
+        <legend>Unrestricted Upload of File</legend>
+        <label for="uuf">Enter your Exploit Here:</label>
+        <input type="file" id="uuf" name="uuf"><br><br>
+        <input type="submit" value="Submit">
+        <p>Try this: some files in download directory </p>
+    </fieldset>
+</form>
+<form action="csrf" method="get">
+    <fieldset name="csrf_demo">
+        <p th:text="|Your email is: ${email}|" />
+        <legend>CSRF</legend>
+        <label for="payload">Change Your Email Here:</label>
+        <input type="text" id="csrf_payload" name="csrf_payload"><br><br>
+        <input type="submit" value="Submit">
+        <p>Try this: open the hdserver app, and click on cute kitten pics</p>
+        <p th:text="${email_message}"></p>
+    </fieldset>
+</form>
+
+<form action="ssrf" method="get">
+    <fieldset name="ssrf_demo">
+        <legend>Server Side Request Forgery (SSRF)</legend>
+        <label for="ssrf">Enter your URL Here:</label>
+        <input type="text" id="ssrf" name="ssrf"><br><br>
+        <input type="submit" value="Submit">
+        <p>Try this, after running hdserver: <code>http://localhost:8081/attackerUrl</code></p>
+    </fieldset>
+</form>
+</body>
+</html>

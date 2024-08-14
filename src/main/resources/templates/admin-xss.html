@@ -5,10 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<p th:utext="|Hello, ${fileName}!|"></p>
-<div th:if="${fileUploadError == null}">
-    <img th:src="${fileName}" alt="UserImage" style="width: 50vh;height: auto">
-</div>
-<p th:text="${fileUploadError}"></p>
+<h1>THYMELEAF HAS INBUILT PROTECTION FOR ALL PAYLOADS</h1>
+<p th:text="|Hello, ${payload}!|"></p>
 </body>
 </html>

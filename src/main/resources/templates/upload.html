@@ -6,5 +6,9 @@
 </head>
 <body>
 <p th:utext="|Hello, ${fileName}!|"></p>
+<div th:if="${fileUploadError == null}">
+    <img th:src="${fileName}" alt="UserImage" style="width: 50vh;height: auto">
+</div>
+<p th:text="${fileUploadError}"></p>
 </body>
 </html>

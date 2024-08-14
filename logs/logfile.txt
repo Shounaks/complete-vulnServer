@@ -1,0 +1,36 @@
+Aug 13, 2024 7:13:30 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected XSS String: <b> H2AXXER </b>
+Aug 13, 2024 7:13:31 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected XSS String: <b> H2AXXER </b>
+Aug 13, 2024 7:13:36 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected XSS String: <b> H2AXXER </b>
+Aug 13, 2024 7:13:38 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected XSS String: <b> H2AXXER </b>
+Aug 13, 2024 7:29:44 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected SQL Injection String: USER_15' OR 1=1 OR password = 'root
+Aug 13, 2024 7:30:18 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Invalid File format: MIS770_Revision_Tut_Topic_04.pdf
+Aug 13, 2024 7:30:38 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: SUSPECTED SSRF DETECTED: http://localhost:8081/attackerUrl
+Aug 13, 2024 7:36:50 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected XSS String:  <b> HAXXER </b>
+Aug 13, 2024 7:37:05 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected XSS String:  <b> HAXXER Shounak </b>
+Aug 13, 2024 7:37:20 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: Suspected SQL Injection String: USER_15' OR 1=1 OR password = 'root
+Aug 13, 2024 7:37:52 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: DETECTED DIFFERENT REFERER - CSRF from referer : http://localhost:8081/
+Aug 13, 2024 7:44:43 PM com.example.servingwebcontent.controller.admin.AdminHomeController logging
+WARNING: SUSPECTED SSRF DETECTED: http://localhost:8081/attackerUrl
+Aug 14, 2024 11:25:40 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Invalid File format: mysql-installer-web-community-8.0.39.0.msi
+Aug 14, 2024 11:25:48 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Invalid File format: Deakin.png
+Aug 14, 2024 11:26:34 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Invalid File format: trivia.png
+Aug 14, 2024 12:25:49 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: JDBC exception executing SQL [select d1_0.id,d1_0.email,d1_0.name,d1_0.password,d1_0.role from data d1_0 where d1_0.name=?] [Table 'hdplus_db.data' doesn't exist] [n/a]; SQL [n/a]
+Aug 14, 2024 12:25:56 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: JDBC exception executing SQL [select d1_0.id,d1_0.email,d1_0.name,d1_0.password,d1_0.role from data d1_0 where d1_0.name=?] [Table 'hdplus_db.data' doesn't exist] [n/a]; SQL [n/a]
+Aug 14, 2024 12:26:06 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: JDBC exception executing SQL [select d1_0.id,d1_0.email,d1_0.name,d1_0.password,d1_0.role from data d1_0 where d1_0.name=?] [Table 'hdplus_db.data' doesn't exist] [n/a]; SQL [n/a]

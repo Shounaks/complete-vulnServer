@@ -1,4 +1,4 @@
-# H2 DB Connectivity
+# MySQL DB Connectivity
 spring:
   application:
     name: "grocery-booking-api"
@@ -25,4 +25,6 @@ spring:
 logging:
   level:
     root: info
-
+    org:
+      springframework:
+        security : DEBUG

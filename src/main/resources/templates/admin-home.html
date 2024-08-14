@@ -4,12 +4,12 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
-<body>
+<body style="background-color: antiquewhite">
 <p th:text="|Hello, ${name}!|"/>
 <p> Which Exploit do you want to try today?</p>
 <p>Do you want to <a href="/custom-logout">log out</a>?</p>
 
-<form action="xss" method="get">
+<form action="/admin/xss" method="get">
     <fieldset name="xss_demo">
         <legend>Cross Site Scripting (XSS)</legend>
         <label for="payload">Enter your Exploit Here:</label>
@@ -18,7 +18,7 @@
         <p>Try this: &lt;b&gt; HAXXER &lt;/b&gt;</p>
     </fieldset>
 </form>
-<form action="sqli" method="get">
+<form action="/admin/sqli" method="get">
     <fieldset name="sqli_demo">
         <legend>SQL Injection</legend>
         <label for="sqli">Enter your Exploit Here:</label>
@@ -27,7 +27,7 @@
         <p>Try this: USER_15' OR 1=1 OR password = 'root</p>
     </fieldset>
 </form>
-<form th:action="@{/fileupload}" method="post" enctype="multipart/form-data">
+<form th:action="@{/admin/fileupload}" method="post" enctype="multipart/form-data">
     <fieldset name="fileupload">
         <legend>Unrestricted Upload of File</legend>
         <label for="uuf">Enter your Exploit Here:</label>
@@ -36,7 +36,7 @@
         <p>Try this: some files in download directory </p>
     </fieldset>
 </form>
-<form action="csrf" method="get">
+<form action="/admin/csrf" method="get">
     <fieldset name="csrf_demo">
         <p th:text="|Your email is: ${email}|" />
         <legend>Client Side Request Forgery (CSRF)</legend>
@@ -48,7 +48,7 @@
     </fieldset>
 </form>
 
-<form action="ssrf" method="get">
+<form action="/admin/ssrf" method="get">
     <fieldset name="ssrf_demo">
         <legend>Server Side Request Forgery (SSRF)</legend>
         <label for="ssrf">Enter your URL Here:</label>

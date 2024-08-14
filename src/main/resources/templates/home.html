@@ -7,6 +7,7 @@
 <body>
 <p th:text="|Hello, ${name}!|"/>
 <p> Which Exploit do you want to try today?</p>
+<p>Do you want to <a href="/custom-logout">log out</a>?</p>
 
 <form action="xss" method="get">
     <fieldset name="xss_demo">
@@ -38,7 +39,7 @@
 <form action="csrf" method="get">
     <fieldset name="csrf_demo">
         <p th:text="|Your email is: ${email}|" />
-        <legend>CSRF</legend>
+        <legend>Client Side Request Forgery (CSRF)</legend>
         <label for="payload">Change Your Email Here:</label>
         <input type="text" id="csrf_payload" name="csrf_payload"><br><br>
         <input type="submit" value="Submit">

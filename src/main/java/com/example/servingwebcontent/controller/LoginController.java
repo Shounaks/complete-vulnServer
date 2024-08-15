@@ -1,6 +1,6 @@
 package com.example.servingwebcontent.controller;
 
-import com.example.servingwebcontent.DataRepository;
+import com.example.servingwebcontent.repository.Data;
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -8,8 +8,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,7 +19,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequiredArgsConstructor
 public class LoginController {
-    private final DataRepository repository;
+//    private final DataRepository repository;
+
+    @GetMapping("/home")
+    public String greeting(Model model, HttpServletRequest request, HttpServletResponse response) {
+//		Data userData = (Data) request.getSession().getAttribute("user");
+        Data userData = (Data) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        model.addAttribute("name", userData.getName());
+        model.addAttribute("email", userData.getEmail());
+        return "home";
+    }
 
     @RequestMapping({"/login", "/"})
     public String index(@RequestParam(required = false) String error, @RequestParam(required = false) String errorMessage, Model model, HttpServletRequest request, HttpServletResponse response) {
@@ -35,7 +47,6 @@ public class LoginController {
             invalidateCookie(request, response);
             return "login";
         }
-
         return "redirect:/login";
     }
 

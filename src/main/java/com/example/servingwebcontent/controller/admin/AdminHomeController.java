@@ -35,7 +35,6 @@ public class AdminHomeController {
     private final DataRepository dataRepository;
     Logger logger = Logger.getLogger(AdminHomeController.class.getName());
 
-
     @RequestMapping(value = "/admin/home", method = RequestMethod.GET)
     public String adminHomePage(Model model) {
         Data userData = (Data) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -82,7 +81,7 @@ public class AdminHomeController {
                 logging(logger, "Invalid File format: " + fileName);
                 throw new IOException("File Not Supported");
             }
-            model.addAttribute("fileName", "../uploads/"+ fileName);
+            model.addAttribute("fileName", "../uploads/" + fileName);
             Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
             e.printStackTrace();

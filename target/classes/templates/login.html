@@ -2,21 +2,60 @@
 <html>
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<form action="auth" method="post">
-    <label for="username" id="usernameLabel">Username:</label>
-    <input type="text" name="username" id="username"/>
-    <br/><br/>
+<!--<form action="auth" method="post">-->
+<!--    <label for="username" id="usernameLabel">Username:</label>-->
+<!--    <input type="text" name="username" id="username"/>-->
+<!--    <br/><br/>-->
 
-    <label for="password" id="passwordLabel">Password:</label>
-    <input type="password" name="password" id="password"/>
-    <br/><br/>
+<!--    <label for="password" id="passwordLabel">Password:</label>-->
+<!--    <input type="password" name="password" id="password"/>-->
+<!--    <br/><br/>-->
 
-    <button type="submit">Login</button>
-    <button type="reset">Reset</button>
-</form>
-<p style="color: red" th:text="${errorMessage}"></p>
+<!--    <button type="submit">Login</button>-->
+<!--    <button type="reset">Reset</button>-->
+<!--</form>-->
+<!--<p style="color: red" th:text="${errorMessage}"></p>-->
+
+<div class="hero bg-base-200 min-h-screen">
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <h1 class="text-5xl font-bold">Vulnerable Server</h1>
+            <p class="py-6">
+                This application was created to ace Secure Coding (SIT738). 😎
+            </p>
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl min-w-full">
+                <form class="card-body" action="auth" method="post">
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Username</span>
+                        </label>
+                        <input type="text" name="username" id="username" placeholder="" class="input input-bordered"
+                               required/>
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Password</span>
+                        </label>
+                        <input type="password" name="password" id="password" placeholder="password"
+                               class="input input-bordered" required/>
+                        <label class="label">
+                            <a href="#" class="label-text-alt text-xl link link-hover text-error"
+                               th:text="${errorMessage}"></a>
+                        </label>
+                    </div>
+                    <div class="form-control mt-6 join flex-row justify-end">
+                        <input type="submit" class="join-item btn btn-primary w-fit"/>
+                        <input type="reset" class="join-item btn btn-primary w-fit"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

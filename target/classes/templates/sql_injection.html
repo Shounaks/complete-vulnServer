@@ -3,28 +3,55 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<p>List of Data Points:</p>
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-            <th>Role</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="data : ${dataList}">
-            <td th:text="${data.id}"></td>
-            <td th:text="${data.name}"></td>
-            <td th:text="${data.email}"></td>
-            <td th:text="${data.password}"></td>
-            <td th:text="${data.role}"></td>
-        </tr>
-    </tbody>
-</table>
+<div class="navbar bg-base-300">
+    <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Vulnerable Server</a>
+    </div>
+    <div class="navbar-end">
+        <a class="btn btn-outline btn-error text-black" href="/custom-logout">LogOut</a>
+    </div>
+</div>
+<div class="p-5">
+    <!--  Sqli CARD  -->
+    <div class="card bg-base-300 w-full shadow-xl">
+        <div class="card-body">
+            <h2 class="card-title">SQLi Attack Demostration</h2>
+            <div class="breadcrumbs text-sm">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/home#sqli">SQL Injection Attack</a></li>
+                    <li>Add Document</li>
+                </ul>
+            </div>
+            <p>SQL Injection Attack: SQL Injection exploits vulnerabilities in a web application's database query
+                execution, allowing attackers to manipulate or access data.</p>
+            <p>List of Data Points:</p>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="data : ${dataList}">
+                    <td th:text="${data.id}"></td>
+                    <td th:text="${data.name}"></td>
+                    <td th:text="${data.email}"></td>
+                    <td th:text="${data.password}"></td>
+                    <td th:text="${data.role}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>

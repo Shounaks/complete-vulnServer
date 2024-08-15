@@ -21,6 +21,21 @@ public class CustomFailureHandler implements AuthenticationFailureHandler {
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         logging(logger, exception.getMessage());
-        response.sendRedirect("/login?error=true&errorMessage=" + exception.getMessage());
+        //Patched Code: ⬇️
+//        response.sendRedirect("/login?error=true&errorMessage=" + exception.getMessage());
+        //Vulnerable Code: ⬇️
+        response.sendRedirect("/login?error=true&errorMessage=" + getExactReason(exception));
+    }
+
+    /*This method is vulnerable and should not be used in production!*/
+    private String getExactReason(AuthenticationException ex) {
+        StackTraceElement stackTraceElement = ex.getStackTrace()[0];
+        if ("org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider".equals(stackTraceElement.getClassName())) {
+            return "Invalid Username";
+        }
+        else if("org.springframework.security.authentication.dao.DaoAuthenticationProvider".equals(stackTraceElement.getClassName())) {
+            return "Invalid Password";
+        }
+        return "Something Went Wrong!";
     }
 }

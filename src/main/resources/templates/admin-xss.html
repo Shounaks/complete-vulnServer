@@ -3,9 +3,32 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<h1>THYMELEAF HAS INBUILT PROTECTION FOR ALL PAYLOADS</h1>
-<p th:text="|Hello, ${payload}!|"></p>
+<div class="navbar bg-base-300 min-h-[10vh]">
+    <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Vulnerable Server</a>
+    </div>
+    <div class="navbar-end">
+        <a class="btn btn-outline btn-error text-black" href="/custom-logout">LogOut</a>
+    </div>
+</div>
+<div class="hero bg-base-200 min-h-[90vh]">
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <div class="card bg-base-100 w-96 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title">Payload Result:</h2>
+                    <p th:text="|Hello, ${payload}!|"></p>
+                    <div class="card-actions justify-end">
+                        <a href="/home" class="btn btn-primary">Go back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

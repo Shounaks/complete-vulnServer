@@ -3,59 +3,193 @@
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body style="background-color: antiquewhite">
-<p th:text="|Hello, ${name}!|"/>
-<p> Which Exploit do you want to try today?</p>
-<p>Do you want to <a href="/custom-logout">log out</a>?</p>
-
-<form action="/admin/xss" method="get">
-    <fieldset name="xss_demo">
-        <legend>Cross Site Scripting (XSS)</legend>
-        <label for="payload">Enter your Exploit Here:</label>
-        <input type="text" id="payload" name="payload"><br><br>
-        <input type="submit" value="Submit">
-        <p>Try this: &lt;b&gt; HAXXER &lt;/b&gt;</p>
-    </fieldset>
-</form>
-<form action="/admin/sqli" method="get">
-    <fieldset name="sqli_demo">
-        <legend>SQL Injection</legend>
-        <label for="sqli">Enter your Exploit Here:</label>
-        <input type="text" id="sqli" name="sqli"><br><br>
-        <input type="submit" value="Submit">
-        <p>Try this: USER_15' OR 1=1 OR password = 'root</p>
-    </fieldset>
-</form>
-<form th:action="@{/admin/fileupload}" method="post" enctype="multipart/form-data">
-    <fieldset name="fileupload">
-        <legend>Unrestricted Upload of File</legend>
-        <label for="uuf">Enter your Exploit Here:</label>
-        <input type="file" id="uuf" name="uuf"><br><br>
-        <input type="submit" value="Submit">
-        <p>Try this: some files in download directory </p>
-    </fieldset>
-</form>
-<form action="/admin/csrf" method="get">
-    <fieldset name="csrf_demo">
-        <p th:text="|Your email is: ${email}|" />
-        <legend>Client Side Request Forgery (CSRF)</legend>
-        <label for="payload">Change Your Email Here:</label>
-        <input type="text" id="csrf_payload" name="csrf_payload"><br><br>
-        <input type="submit" value="Submit">
-        <p>Try this: open the hdserver app, and click on cute kitten pics</p>
-        <p th:text="${email_message}"></p>
-    </fieldset>
-</form>
-
-<form action="/admin/ssrf" method="get">
-    <fieldset name="ssrf_demo">
-        <legend>Server Side Request Forgery (SSRF)</legend>
-        <label for="ssrf">Enter your URL Here:</label>
-        <input type="text" id="ssrf" name="ssrf"><br><br>
-        <input type="submit" value="Submit">
-        <p>Try this, after running hdserver: <code>http://localhost:8081/attackerUrl</code></p>
-    </fieldset>
-</form>
+<body>
+<div class="navbar bg-base-300">
+    <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Vulnerable Server</a>
+    </div>
+    <div class="flex-none">
+        <p class="text-xl">Logged In As: <span class="badge badge-outline badge-accent px-5 ml-10 py-0"
+                                               th:text="|${name}|"/></p>
+    </div>
+    <div class="navbar-end">
+        <a class="btn btn-outline btn-success text-black" href="/custom-logout">LogOut</a>
+    </div>
+</div>
+<!--CARD START HERE-->
+<div class="p-5">
+    <!--  XSS CARD  -->
+    <div class="card bg-base-300 w-full shadow-xl border-warning">
+        <div class="card-body">
+            <h2 class="card-title">Cross Site Scripting (XSS)</h2>
+            <p>Cross Site Scripting: An XSS (Cross-Site Scripting) attack injects malicious scripts into trusted
+                websites, compromising user data and security.</p>
+            <div class="chat chat-start">
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img
+                                alt="Tailwind CSS chat bubble component"
+                                src="/uploads/AngraAF1.webp"/>
+                    </div>
+                </div>
+                <div class="chat-bubble">
+                    <span class="font-bold">Shounak-Bot: </span>try this
+                    <span class="text-error" style="user-select: all;">&lt;b&gt; HAXXER &lt;/b&gt;</span>
+                </div>
+            </div>
+            <form action="xss" method="get">
+                <label for="payload"></label>
+                <div class="join">
+                    <button class="btn btn-success join-item rounded-r-full">Submit</button>
+                    <input type="text" id="payload" name="payload" placeholder="Enter Exploit Here"
+                           class="input input-bordered input-success join-item w-full min-w-full">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <!--  SQLI CARD  -->
+    <div class="card bg-base-300 w-full shadow-xl border-warning">
+        <div class="card-body">
+            <h2 class="card-title">SQL Injection (SQLi)</h2>
+            <p>SQL Injection Attack: SQL Injection exploits vulnerabilities in a web application's database query
+                execution, allowing attackers to manipulate or access data.</p>
+            <div class="chat chat-start">
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img
+                                alt="Tailwind CSS chat bubble component"
+                                src="/uploads/AngraAF1.webp"/>
+                    </div>
+                </div>
+                <div class="chat-bubble">
+                    <span class="font-bold">Shounak-Bot: </span>try this
+                    <span class="text-error" style="user-select: all;">USER_15' OR 1=1 OR password = 'root</span>
+                </div>
+            </div>
+            <form action="sqli" method="get">
+                <label for="sqli"></label>
+                <div class="join">
+                    <button class="btn btn-success join-item rounded-r-full">Submit</button>
+                    <input type="text" id="sqli" name="sqli" placeholder="Enter Exploit Here"
+                           class="input input-bordered input-success join-item w-full min-w-full">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <!--  Unrestricted Upload CARD  -->
+    <div class="card bg-base-300 w-full shadow-xl border-warning">
+        <div class="card-body">
+            <h2 class="card-title">Unrestricted Upload</h2>
+            <p>Unrestricted Upload of File: An Unrestricted File Upload attack occurs when an application allows users
+                to upload files without proper validation, potentially leading to execution of malicious code or
+                unauthorized access.</p>
+            <div class="chat chat-start">
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img
+                                alt="Tailwind CSS chat bubble component"
+                                src="/uploads/AngraAF1.webp"/>
+                    </div>
+                </div>
+                <div class="chat-bubble">
+                    <span class="font-bold">Shounak-Bot: </span>Try to Upload Some .exe files 👿
+                </div>
+            </div>
+            <form th:action="@{/admin/fileupload}" method="post" enctype="multipart/form-data">
+                <label for="sqli"></label>
+                <div class="join">
+                    <input id="uuf" name="uuf" type="file"
+                           class="file-input file-input-bordered file-input-success w-full max-w-xs join-item"/>
+                    <button class="btn btn-success join-item rounded-r-full">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <!--  CSRF CARD  -->
+    <div class="card bg-base-300 w-full shadow-xl border-warning">
+        <div class="card-body">
+            <h2 class="card-title">Client Side Request Forgery (CSRF)</h2>
+            <p>Client-Side Request Forgery: Client-Side Request Forgery (CSRF) tricks a client into making unintended
+                requests to a server, often compromising security.</p>
+            <div class="chat chat-start">
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img
+                                alt="Tailwind CSS chat bubble component"
+                                src="/uploads/AngraAF1.webp"/>
+                    </div>
+                </div>
+                <div class="chat-bubble">
+                    <span class="font-bold">Shounak-Bot: </span>
+                    <p class="text-warning" th:text="|Your email is: ${email}|"/>
+                    Its time to open the "HDServer" Application, which is my
+                    Attacker Application, And then click on Cute Kitten Pics button!
+                </div>
+            </div>
+            <form action="csrf" method="get">
+                <label for="sqli"></label>
+                <div class="join">
+                    <button class="btn btn-success join-item rounded-r-full">Submit</button>
+                    <input type="text" id="csrf_payload" name="csrf_payload" placeholder="Enter Exploit Here"
+                           class="input input-bordered input-success join-item w-full min-w-full">
+                </div>
+                <div th:if="${email_message != null}">
+                    <div class="chat chat-start">
+                        <div class="chat-image avatar">
+                            <div class="w-10 rounded-full">
+                                <img
+                                        alt="Tailwind CSS chat bubble component"
+                                        src="/uploads/AngraAF1.webp"/>
+                            </div>
+                        </div>
+                        <div class="chat-bubble">
+                            <span class="font-bold">Shounak-Bot: </span>
+                            <span th:text="${email_message}"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <!--  SSRF CARD  -->
+    <div class="card bg-base-300 w-full shadow-xl border-warning">
+        <div class="card-body">
+            <h2 class="card-title">Server Side Request Forgery</h2>
+            <p>Server-Side Request Forgery (SSRF): manipulates a server into making unauthorized requests to internal or
+                external resources.</p>
+            <div class="chat chat-start">
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img
+                                alt="Tailwind CSS chat bubble component"
+                                src="/uploads/AngraAF1.webp"/>
+                    </div>
+                </div>
+                <div class="chat-bubble">
+                    <span class="font-bold">Shounak-Bot: </span>keep the Attacker "HDServer" Server running for this one
+                    as well!
+                    <br/>
+                    call the following URL: <span class="text-error" style="user-select: all;">http://localhost:8081/attackerUrl</span>
+                </div>
+            </div>
+            <form action="ssrf" method="get">
+                <label for="payload"></label>
+                <div class="join">
+                    <button class="btn btn-success join-item rounded-r-full">Submit</button>
+                    <input type="text" id="ssrf" name="ssrf" placeholder="Enter Exploit Here"
+                           class="input input-bordered input-success join-item w-full min-w-full">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="divider"></div>
+</div>
 </body>
 </html>

@@ -1,30 +1,30 @@
-Aug 14, 2024 3:34:31 PM com.example.servingwebcontent.utils.LogUtils logging
+Aug 17, 2024 9:41:18 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Suspected XSS String: <b> HAXXER </b>
-Aug 14, 2024 3:59:41 PM com.example.servingwebcontent.utils.LogUtils logging
+Aug 17, 2024 9:49:06 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Suspected SQL Injection String: USER_15' OR 1=1 OR password = 'root
-Aug 14, 2024 4:58:42 PM com.example.servingwebcontent.utils.LogUtils logging
+Aug 17, 2024 10:00:00 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>
+Aug 17, 2024 10:00:38 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>
+Aug 17, 2024 10:06:30 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Suspected SQL Injection String: USER_15' OR 1=1 OR password = 'root
-Aug 14, 2024 5:29:04 PM com.example.servingwebcontent.utils.LogUtils logging
+Aug 17, 2024 10:14:04 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Invalid File format: SteamSetup.exe
-Aug 15, 2024 7:27:35 AM com.example.servingwebcontent.utils.LogUtils logging
+Aug 17, 2024 10:14:35 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Invalid File format: SteamSetup.exe
+Aug 17, 2024 10:23:35 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: DETECTED DIFFERENT REFERER - CSRF from referer : http://localhost:8081/
+Aug 17, 2024 10:35:10 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: SUSPECTED SSRF DETECTED: http://localhost:8081/attackerUrl
+Aug 17, 2024 10:40:42 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
-Aug 15, 2024 7:39:06 AM com.example.servingwebcontent.utils.LogUtils logging
+Aug 17, 2024 10:40:54 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
-Aug 15, 2024 7:41:02 AM com.example.servingwebcontent.utils.LogUtils logging
+Aug 17, 2024 10:41:36 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
-Aug 15, 2024 7:41:13 AM com.example.servingwebcontent.utils.LogUtils logging
+Aug 18, 2024 6:59:50 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
-Aug 15, 2024 7:41:27 AM com.example.servingwebcontent.utils.LogUtils logging
+Aug 18, 2024 6:59:59 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
-Aug 15, 2024 7:44:01 AM com.example.servingwebcontent.utils.LogUtils logging
-WARNING: Bad credentials
-Aug 15, 2024 8:03:29 AM com.example.servingwebcontent.utils.LogUtils logging
-WARNING: Bad credentials
-Aug 15, 2024 8:04:09 AM com.example.servingwebcontent.utils.LogUtils logging
-WARNING: Bad credentials
-Aug 15, 2024 8:06:35 AM com.example.servingwebcontent.utils.LogUtils logging
-WARNING: Bad credentials
-Aug 15, 2024 8:07:34 AM com.example.servingwebcontent.utils.LogUtils logging
-WARNING: Bad credentials
-Aug 15, 2024 11:09:12 AM com.example.servingwebcontent.utils.LogUtils logging
-WARNING: Bad credentials
+Aug 18, 2024 7:32:19 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>

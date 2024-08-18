@@ -38,12 +38,13 @@ public class SecurityConfig {
 
     @Bean
     protected SecurityFilterChain configure(HttpSecurity http) throws Exception {
-        return http.csrf(AbstractHttpConfigurer::disable) // We'll demonstrate CSRF and enable it later
+        return http
+//                .csrf(AbstractHttpConfigurer::disable) // We'll demonstrate CSRF and enable it later
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
                                 authorizationManagerRequestMatcherRegistry
                                         //Sometimes I feel I am loosing my sanity over un-debuggable things 😃
                                         .requestMatchers("/admin/**", "/admin/home").hasAuthority("ADMIN")
-//                                .requestMatchers("/manager/**").hasRole("MANAGER")
+                                        .requestMatchers("/manager/**").hasAuthority("MANAGER")
 //                                .requestMatchers("/user/**").hasRole("USER")
                                         .requestMatchers("/", "/auth", "/login", "/logout").permitAll()
                                         .requestMatchers("/uploads/**", "/favicon.ico").permitAll()//TO SHOW THE IMAGE TO UI

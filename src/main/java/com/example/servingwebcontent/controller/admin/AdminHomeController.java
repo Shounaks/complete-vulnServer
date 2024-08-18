@@ -109,7 +109,7 @@ public class AdminHomeController {
         return "redirect:/admin/home";
     }
 
-    private final String fullBaseUrl(HttpServletRequest request) {
+    private String fullBaseUrl(HttpServletRequest request) {
         // Get context path
 //        String contextPath = request.getContextPath();
 

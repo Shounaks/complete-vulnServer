@@ -28,3 +28,11 @@ Aug 18, 2024 6:59:59 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
 Aug 18, 2024 7:32:19 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Suspected XSS String: <b> HAXXER </b>
+Aug 19, 2024 8:16:40 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>
+Aug 19, 2024 12:32:31 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>
+Aug 19, 2024 7:00:13 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>
+Aug 19, 2024 7:00:39 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected SQL Injection String: USER_15' OR 1=1 OR password = 'root

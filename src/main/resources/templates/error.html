@@ -5,15 +5,41 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
-OOPS Something is not right...
-Many things can go wrong,
+<div class="navbar bg-base-300 min-h-[10vh]">
+    <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Vulnerable Server</a>
+    </div>
+    <div class="navbar-end">
+        <a class="btn btn-outline btn-error text-black" href="/custom-logout">LogOut</a>
+    </div>
+</div>
+<div class="hero bg-base-200 min-h-[90vh]">
+    <div class="hero-content text-center">
+        <div class="max-w-md">
+            <div class="card flex justify-center">
+                <div class="card-body">
+                    <h2 class="card-title text-7xl">OOPS Something went wrong</h2>
+                    <div>
+                        OOPS Something is not right...
+                        Many things can go wrong,
 
-1. user trying to access superuser pages
-2. Server Messed up
-3. SpringBoot DevTools is restarting the server.
-etc.etc.
+                        1. user trying to access superuser pages
+                        2. Server Messed up
+                        3. SpringBoot DevTools is restarting the server.
+                        etc.etc.
+                    </div>
+                    <div class="">
+                        <a href="/home" class="btn btn-primary">Go back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

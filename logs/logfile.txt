@@ -56,3 +56,7 @@ Sept 15, 2024 9:50:39 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
 Sept 15, 2024 9:51:42 AM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Bad credentials
+Sept 15, 2024 12:05:13 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: DETECTED DIFFERENT REFERER - CSRF from referer : http://localhost:8081/
+Sept 15, 2024 12:06:25 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: SUSPECTED SSRF DETECTED: http://localhost:8081/attackerUrl

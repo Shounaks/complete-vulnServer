@@ -24,6 +24,9 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         if ("ADMIN".equals(principalRole)) {
 //            log.warn("ADMIN LOGIN DETECTED: {}", authentication.getName());
             response.sendRedirect("/admin/home");
-        } else response.sendRedirect("/home");
+        } else if("MANAGER".equals(principalRole)) {
+            response.sendRedirect("/manager/dashboard");
+        }
+        else response.sendRedirect("/home");
     }
 }

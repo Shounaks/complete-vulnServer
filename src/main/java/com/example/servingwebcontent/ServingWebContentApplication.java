@@ -43,5 +43,12 @@ public class ServingWebContentApplication implements CommandLineRunner {
                 .role("ADMIN")
                 .build());
         log.info("Admin Data Created!");
+        repository.save(Data.builder()
+                .name("manager")
+                .email("manager@gmail.com")
+                .password(passwordEncoder.encode("manager"))
+                .role("MANAGER")
+                .build());
+        log.info("Manager Data Created!");
     }
 }

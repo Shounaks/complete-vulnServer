@@ -20,9 +20,9 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         Object principal = authentication.getPrincipal();
         final String principalRole = ((Data) principal).getRole();
         //BELOW WILL LEAK HASH - Required for INFO
-        log.info(((Data) principal).getPassword());
+//        log.info(((Data) principal).getPassword());
         if ("ADMIN".equals(principalRole)) {
-            log.warn("ADMIN LOGIN DETECTED: {}", authentication.getName());
+//            log.warn("ADMIN LOGIN DETECTED: {}", authentication.getName());
             response.sendRedirect("/admin/home");
         } else response.sendRedirect("/home");
     }

@@ -93,6 +93,7 @@ public class AdminHomeController {
     @RequestMapping("/admin/csrf")
     public String csrf(@RequestHeader(value = "Referer", required = false) String referer, @RequestParam String csrf_payload, HttpServletRequest request, Model model) {
         if (!referer.startsWith("http://localhost:8080")) {
+            request.getSession().invalidate();
             logging(logger, "DETECTED DIFFERENT REFERER - CSRF from referer : " + referer);
             log.warn("SUSPECTED CSRF DETECTED!");
             return "redirect:/admin/home";

@@ -36,3 +36,23 @@ Aug 19, 2024 7:00:13 PM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Suspected XSS String: <b> HAXXER </b>
 Aug 19, 2024 7:00:39 PM com.example.servingwebcontent.utils.LogUtils logging
 WARNING: Suspected SQL Injection String: USER_15' OR 1=1 OR password = 'root
+Aug 21, 2024 5:08:07 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>
+Aug 30, 2024 1:46:54 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Bad credentials
+Aug 30, 2024 1:47:59 PM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Suspected XSS String: <b> HAXXER </b>
+Sept 15, 2024 7:46:02 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Invalid File format: Tute 8 Excel Workbook.xlsx
+Sept 15, 2024 9:31:51 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Invalid File format: SteamSetup.exe
+Sept 15, 2024 9:34:11 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: DETECTED DIFFERENT REFERER - CSRF from referer : http://localhost:8081/
+Sept 15, 2024 9:43:13 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: DETECTED DIFFERENT REFERER - CSRF from referer : http://localhost:8081/
+Sept 15, 2024 9:44:55 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: DETECTED DIFFERENT REFERER - CSRF from referer : http://localhost:8081/
+Sept 15, 2024 9:50:39 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Bad credentials
+Sept 15, 2024 9:51:42 AM com.example.servingwebcontent.utils.LogUtils logging
+WARNING: Bad credentials

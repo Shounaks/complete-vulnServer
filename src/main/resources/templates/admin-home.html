@@ -45,6 +45,7 @@
                 <div class="join">
                     <button class="btn btn-success join-item rounded-r-full">Submit</button>
                     <input type="text" id="payload" name="payload" placeholder="Enter Exploit Here"
+                           pattern="^[\w]+$"
                            class="input input-bordered input-success join-item w-full min-w-full">
                 </div>
             </form>
@@ -75,6 +76,7 @@
                 <div class="join">
                     <button class="btn btn-success join-item rounded-r-full">Submit</button>
                     <input type="text" id="sqli" name="sqli" placeholder="Enter Exploit Here"
+                           pattern="^[\w]+$"
                            class="input input-bordered input-success join-item w-full min-w-full">
                 </div>
             </form>
@@ -133,7 +135,7 @@
                 </div>
             </div>
             <form action="csrf" method="get">
-                <label for="sqli"></label>
+                <label for="csrf_payload"></label>
                 <div class="join">
                     <button class="btn btn-success join-item rounded-r-full">Submit</button>
                     <input type="text" id="csrf_payload" name="csrf_payload" placeholder="Enter Exploit Here"

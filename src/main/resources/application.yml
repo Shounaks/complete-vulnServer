@@ -1,7 +1,7 @@
 # MySQL DB Connectivity
 spring:
   application:
-    name: "grocery-booking-api"
+    name: "vulnerable-server"
   servlet:
     multipart:
       max-file-size: 10MB
